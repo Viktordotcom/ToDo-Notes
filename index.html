@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <script src="bundle.js" defer></script>
+</head>
+<header>
+    <input type="checkbox" name="" id="navbar-hidden-checkbox">
+    <label for="navbar-hidden-checkbox">
+        <span id="navbar-menu-icon"class="material-icons">
+            format_list_bulleted
+        </span>
+    </label>
+    <nav id="navbar">
+        <!-- Newly Created Projects Go Here, 
+        for each creation the full content
+         of this Element gets deleted -->
+</nav>
+</header>
+<body>  
+        <form id="Pform-for-project-creation" onsubmit="return false;">
+            <button><span id="Pform-plus-icon" class="material-icons">add_circle_outline</span></button>
+            <input type="text" name="" id="Pform-for-project-creation-in" placeholder="Add a New Project" required>
+        </form>
+        <div id="main-container">      
+        <div id="current-project-tasks-container">
+            <!-- Newly Created Tasks Go Here ... -->
+        </div>
+        <div id="modal">
+            <div id="Tform-for-task-creation"  onsubmit="return false">
+                <span id="Tform-delete-icon" class="material-icons">remove</span>
+                <p>Title<input type="text" id="Tform-title-in" required></p>
+                <p>Description<textarea id="Tform-description-in" required></textarea></p>
+                <p>DueDate<input type="date" id="Tform-date-in"></p>
+                <p>Priority
+                    <select name="prio" id="Tform-priority-select">
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                </p>
+                <p>Complete?<input id="Tform-complete-in" type="checkbox"></p>
+                <button id="Tform-btn-submit-form">Submit</button>
+            </div>
+        </div>
+    </div>
+    <button id="btn-delete-complete-tasks">Delete Completed Tasks<span id="btn-delete-complete-tasks-icon" class="material-icons">delete_sweep</span></button>
+    <div id="add-task-info">
+    <span id="add-task-plus-icon" class="material-icons">add_circle</span>
+    <span id="add-task-text"class="material-icons">
+        keyboard_double_arrow_down
+        </span>  
+    </div>
+    <h2 id="title">My Projects</h2>
+</body>
+</html>

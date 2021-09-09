@@ -1,0 +1,325 @@
+*{
+    box-sizing:border-box;
+    font-family: 'Architects Daughter', cursive;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 58px;
+    width: 250px;
+    height: 100%;
+    background-color:#ccc5b9;
+    display: grid !important;
+    grid-template-rows: repeat(auto-fit, minmax(50px,80px));
+    font-size: 1.5rem;
+    border: 1px solid black;
+    align-content: center;
+    justify-content: center;
+    row-gap: 2px;
+    z-index: 3;
+}
+
+#title{
+    margin-left: 5px;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+}
+
+button, select, .material-icons{
+    cursor: pointer;
+}
+
+textarea{
+    max-width: 220px ;
+    resize: none;
+    background: inherit;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.material-icons:hover{
+    transform: scale(1.2);
+}
+
+#navbar-menu-icon{
+    font-size: 2rem;
+    display: none;
+    top: 0;
+    left: 0;
+    position: fixed;
+
+}
+
+#navbar-hidden-checkbox{
+    display: none;
+}
+
+.navbar-projects{
+    max-width:200px;
+    height: 30px;
+    background: rgba(0, 0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+.navbar-projects:hover{
+    transform: scale(1.1);
+    outline: 1px solid chartreuse;
+}
+
+.navbar-projects>select{
+    max-width: 200px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.navbar-projects>button{
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.navbar-projects.current{
+    color: orangered;
+    outline: 1px solid orangered;
+    transform: scale(1.1);
+}
+
+#Pform-for-project-creation{
+    position: fixed;
+    left: 30%;
+    bottom: 95%;
+    display: flex;
+    z-index: 3;
+}
+
+#Pform-for-project-creation>button{
+    margin-left: 5px;
+    order: 2;
+    background:none!important;
+    border:none; 
+    padding:0!important;
+
+}
+
+#main-container, #Pform-for-project-creation-in{
+    display: flex;
+}
+
+#current-project-tasks-container{
+margin-top: 50px;
+margin-left: 250px;
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: row;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+.task-containers{
+    width: 250px;
+    height: 350px;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px ;
+}
+
+.task-title-in{
+    width: 220px;
+    font-size: 1.2rem;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+}
+
+.task-date-in{
+    cursor: pointer;
+    border: none;
+    background-color: inherit;
+    outline: none;
+}
+
+.task-containers>p>textarea{
+    resize: none;
+    font-size: 1.1rem;
+    background: inherit;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+}
+
+.task-complete-in{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+}
+
+.task-containers.complete{
+text-decoration: line-through;
+}
+
+#delete-task-btn, #Tform-delete-icon{
+    margin-left: 90%;
+    display: inline-block;
+    border: red;
+    border-radius: 50%;
+}
+
+#Tform-delete-icon{
+    background: red;
+
+}
+
+#btn-delete-complete-tasks{
+    position: absolute;
+    bottom: 95%;
+    right: 5%;
+    width: auto;
+    height: 30px;
+}
+
+#add-task-text{
+    position: fixed;
+    color: transparent;
+    font-size: 3rem;
+    bottom: 13.5%;
+    right: 5%;
+    display: flex;
+    height: 30px;
+    transition: all 0.2s ease-out;
+    cursor: default;
+    user-select: none;
+    
+}
+
+#add-task-text.on{
+    display: flex;
+    color: black;
+}
+
+#add-task-plus-icon{
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    font-size: 3rem;
+}
+
+#modal{
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transition: all 0.2s ease-out;
+}
+
+#Tform-for-task-creation{
+    position: fixed;
+    width: 250px;
+    height: 350px;
+    border: 1px solid magenta;
+    border-radius: 15px;
+    background: #ccc5b9;
+
+}
+#Tform-title-in{
+    background: inherit;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+}
+#Tform-complete-in{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+#Tform-date-in{
+    background: inherit;
+    border: none;
+    cursor: pointer;
+    border-bottom: none;
+}
+#modal.open{
+    display: flex;
+}
+#Tform-btn-submit-form{
+margin-inline-start: 37.5%;
+height: 30px;
+}
+
+@media (max-width:450px) {
+    nav{
+        width: 0;
+        height: 0;
+    }
+    .navbar-projects{
+        display: none;
+    }
+
+    #current-project-tasks-container{
+        flex-direction: column;
+        margin-left: 50px;
+    }
+    #navbar-menu-icon{
+        display: flex;
+        z-index: 4;
+    }
+    #navbar-hidden-checkbox:checked ~ nav{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: repeat(auto-fit, minmax(50px,80px));
+        grid-template-columns: repeat(2, minmax(80px, 100px));
+        column-gap: 60px;
+        row-gap: 60px;
+        overflow-y: scroll;
+        transition: all 0.2s ease-in;
+    }
+    #navbar-hidden-checkbox:checked ~ nav>div{
+        display: flex;  
+    }
+    #Pform-for-project-creation{
+    position: fixed;
+    left: 10%;
+    bottom: 95%;
+    display: flex;
+    }
+    #btn-delete-complete-tasks{
+        background: none !important;
+        position: fixed;
+        color: transparent;
+        width: 20px;
+        height: 20px;
+    left: -15%;
+    bottom: 10%;
+    display: flex;
+    }
+    #btn-delete-complete-tasks-icon{
+        color: black;
+        font-size: 3rem;
+    }
+    #title{
+        display: none;
+    }
+    #add-task-text{
+        bottom: 14%;
+        right: 4.8%;
+    }
+    
+}
