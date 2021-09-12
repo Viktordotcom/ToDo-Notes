@@ -27,7 +27,9 @@ nav{
     top: 0%;
     left: 0%;
 }
-
+input{
+    accent-color:green;
+}
 button, select, .material-icons{
     cursor: pointer;
 }
